@@ -359,6 +359,10 @@ Tween.prototype = {
 		this.easing = easing || "swing";
 		this.options = options;
 		this.start = this.now = this.cur();
+    if(isNaN(this.start))
+      this.start = 0;
+    if(isNaN(this.now))
+      this.now = 0;
 		this.end = end;
 		this.unit = unit || ( jQuery.cssNumber[ prop ] ? "" : "px" );
 	},
